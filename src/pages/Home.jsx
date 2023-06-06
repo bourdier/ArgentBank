@@ -16,7 +16,7 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="features">
+      <section className="feature">
         <h2 className="sr-only">Features</h2>
         <Feature
           imageSrc={chatIcon}

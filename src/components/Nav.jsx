@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className="main-nav">
       <Link to="/" className="main-nav__logo">
         <img
-          className="main-nav-logo__image"
+          className="main-nav__logo__image"
           src={Logo}
           alt="Argent Bank Logo"
         />

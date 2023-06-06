@@ -4,16 +4,16 @@
   @media (min-width: map-get($breakpoints, desktop)) {
     flex-direction: row;
   }
-  &-icon {
+  &__icon {
     width: 100px;
     border: 10px solid $color-primary;
     border-radius: 50%;
     padding: 1rem;
   }
-  &-item {
+  &__item {
     flex: 1;
     padding: 2.5rem;
-    &-title {
+    &__title {
       color: $color-feature-text;
       font-size: 1.25rem;
       font-weight: bold;

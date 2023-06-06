@@ -11,15 +11,15 @@
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
-  &-amount {
+  &__amount {
     margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
-    &-description {
+    &__description {
       margin: 0;
     }
   }
-  &-content-wrapper {
+  &__content__wrapper {
     width: 100%;
     flex: 1;
   }

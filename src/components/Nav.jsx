@@ -25,17 +25,17 @@ export default function Navbar() {
         {isLoggedIn ? (
           <>
             <Link to="/user" className="main-nav__item">
-              <i className="fa fa-user-circle"></i>
+              <i className="fa fa-user-circle main-nav__icon"></i>
               Tony
             </Link>
             <Link to="#" className="main-nav__item" onClick={handleLogout}>
-              <i className="fa fa-sign-out"></i>
+              <i className="fa fa-sign-out main-nav__icon"></i>
               Sign Out
             </Link>
           </>
         ) : (
           <Link to="/login" className="main-nav__item">
-            <i className="fa fa-user-circle"></i>
+            <i className="fa fa-user-circle main-nav__icon"></i>
             Sign In
           </Link>
         )}

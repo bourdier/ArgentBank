@@ -1,4 +1,5 @@
 export default function Navbar() {
+  const isLoggedIn = false; // Temp value to test the component without having to log in and out
   return (
     <nav className="main-nav">
       <a className="main-nav-logo" href="./index.html">

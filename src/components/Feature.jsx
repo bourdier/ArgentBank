@@ -1,4 +1,6 @@
-export default function Feature(imageSrc, imageAlt, title, description) {
+export default function Feature(props) {
+  const { imageSrc, imageAlt, title, description } = props;
+  
   return (
     <div className="feature-item">
       <img src={imageSrc} alt={imageAlt} className="feature-icon" />

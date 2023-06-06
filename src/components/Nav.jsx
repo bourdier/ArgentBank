@@ -12,11 +12,6 @@ export default function Navbar() {
       </a>
       <div>
         {isLoggedIn ? (
-          <a className="main-nav-item" href="./sign-in.html">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-          </a>
-        ) : (
           <>
             <a className="main-nav-item" href="./user.html">
               <i className="fa fa-user-circle"></i>
@@ -27,6 +22,11 @@ export default function Navbar() {
               Sign Out
             </a>
           </>
+        ) : (
+          <a className="main-nav-item" href="./sign-in.html">
+            <i className="fa fa-user-circle"></i>
+            Sign In
+          </a>
         )}
       </div>
     </nav>

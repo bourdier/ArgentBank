@@ -15,4 +15,9 @@
       margin-top: unset;
       font-size: unset;
   }
+  &.transaction {
+    @media (min-width: map-get($breakpoints, laptop)) {
+      width: 200px;
+    }
+  }
 }

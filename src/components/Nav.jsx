@@ -3,7 +3,7 @@ import Logo from "../assets/images/argentBankLogo.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const isLoggedIn = true; // Temp value to test the component without having to log in and out
+  const isLoggedIn = false; // Temp value to test the component without having to log in and out
 
   const handleLogout = () => {
     // Temp function to test the component without having to log in and out

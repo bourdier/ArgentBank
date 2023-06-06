@@ -7,14 +7,14 @@ import Signin from './pages/Signin';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Signin />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -3,7 +3,7 @@ export default function Footer() {
   const year = d.getFullYear();
   return (
     <footer className="footer">
-      <p className="footer-text">Copyright {year} Argent Bank</p>
+      <p className="footer__text">Copyright {year} Argent Bank</p>
     </footer>
   )
 }

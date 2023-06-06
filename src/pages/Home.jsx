@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <div className="hero">
-        <section className="hero-content">
+        <section className="hero__content">
           <h2 className="sr-only">Promoted Content</h2>
           <p className="subtitle">No fees.</p>
           <p className="subtitle">No minimum deposit.</p>

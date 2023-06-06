@@ -13,9 +13,9 @@ export default function Navbar() {
 
   return (
     <nav className="main-nav">
-      <Link to="/" className="main-nav-logo">
+      <Link to="/" className="main-nav__logo">
         <img
-          className="main-nav-logo-image"
+          className="main-nav-logo__image"
           src={Logo}
           alt="Argent Bank Logo"
         />
@@ -24,17 +24,17 @@ export default function Navbar() {
       <div>
         {isLoggedIn ? (
           <>
-            <Link to="/user" className="main-nav-item">
+            <Link to="/user" className="main-nav__item">
               <i className="fa fa-user-circle"></i>
               Tony
             </Link>
-            <Link to="#" className="main-nav-item" onClick={handleLogout}>
+            <Link to="#" className="main-nav__item" onClick={handleLogout}>
               <i className="fa fa-sign-out"></i>
               Sign Out
             </Link>
           </>
         ) : (
-          <Link to="/login" className="main-nav-item">
+          <Link to="/login" className="main-nav__item">
             <i className="fa fa-user-circle"></i>
             Sign In
           </Link>

@@ -23,6 +23,7 @@ export default function Signin() {
       .then(response => response.json())
       .then(data => {
         localStorage.setItem('token', JSON.stringify(data.body['token']));
+        window.location.replace("./dashboard");
       })
       .catch(error => {
         console.error(error);

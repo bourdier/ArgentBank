@@ -1,12 +1,12 @@
-import express, { json, urlencoded } from 'express'
-import { config } from 'dotenv'
-import cors from 'cors'
-import { serve, setup } from 'swagger-ui-express'
-import { load } from 'yamljs'
-const swaggerDocs = load('./swagger.yaml')
-import dbConnection from './database/connection'
+const express = require('express')
+const dotEnv = require('dotenv')
+const cors = require('cors')
+const swaggerUi = require('swagger-ui-express')
+const yaml = require('yamljs')
+const swaggerDocs = yaml.load('./swagger.yaml')
+const dbConnection = require('./database/connection')
 
-config()
+dotEnv.config()
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -18,15 +18,15 @@ dbConnection()
 app.use(cors())
 
 // Request payload middleware
-app.use(json())
-app.use(urlencoded({ extended: true }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 // Handle custom routes
 app.use('/api/v1/user', require('./routes/userRoutes'))
 
 // API Documentation
 if (process.env.NODE_ENV !== 'production') {
-  app.use('/api-docs', serve, setup(swaggerDocs))
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 
 app.get('/', (req, res, next) => {

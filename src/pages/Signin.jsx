@@ -22,7 +22,7 @@ export default function Signin() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        localStorage.setItem('token', JSON.stringify(data.body['token']));
       })
       .catch(error => {
         console.error(error);

@@ -12,8 +12,6 @@ export default function Signin() {
       password: password
     };
 
-    console.log(formData)
-
     fetch('http://localhost:3001/api/v1/user/login', {
       method: 'POST',
       headers: {

@@ -19,7 +19,6 @@ export default function Navbar() {
     navigate("/login");
     navigate(0);
     clearPersistedState();
-    console.log("logged out");
   };
 
   return (

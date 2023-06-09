@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Logo from "../assets/images/argentBankLogo.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const isLoggedIn = false; // Temp value to test the component without having to log in and out
+  const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
 
   const handleLogout = () => {
     // Temp function to test the component without having to log in and out

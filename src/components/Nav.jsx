@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { clearPersistedState } from "../redux";
 import Logo from "../assets/images/argentBankLogo.png";
 
 export default function Navbar() {
@@ -7,9 +8,10 @@ export default function Navbar() {
   const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
 
   const handleLogout = () => {
-    // Temp function to test the component without having to log in and out
-    console.log("Log out");
-    navigate("/", { replace: true });
+    navigate('/login');
+    navigate(0)
+    clearPersistedState();
+    console.log("logged out");
   };
 
   return (

@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { userSlice } from './auth/reducer';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, purgeStoredState} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 
@@ -23,3 +23,7 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+export const clearPersistedState = () => {
+  persistor.purge();
+};

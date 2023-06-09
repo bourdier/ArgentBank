@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 export default function Signin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -22,8 +24,13 @@ export default function Signin() {
     })
       .then(response => response.json())
       .then(data => {
-        // localStorage.setItem('token', JSON.stringify(data.body['token']));
-        window.location.replace("./dashboard");
+        if (data.status === 200) {
+          // window.location.replace("./dashboard");
+          
+          console.log(data.status, data.body['token']);
+        } else {
+          console.log(data);
+        }
       })
       .catch(error => {
         console.error(error);

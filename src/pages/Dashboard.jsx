@@ -1,10 +1,6 @@
-import { useSelector } from "react-redux";
 import Account from "../components/Account";
 
 export default function Dashboard() {
-  const user = useSelector((state) => state.usersData);
-  console.log(user)
-
   return (
     <main className="main bg-dark">
       <div className="header">

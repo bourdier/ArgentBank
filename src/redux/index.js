@@ -1,15 +1,12 @@
-import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { userSlice } from './auth/reducer';
-import logger from 'redux-logger'
-// import thunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 
-const reducer = combineReducers({
-  usersData: userSlice.reducer,
+const reducer = configureStore({
+  reducer: {
+    usersData: userSlice.reducer,
+  },
+  middleware: [thunk],
 });
 
-const middleware = [...getDefaultMiddleware(), logger]
-
-export default configureStore({
-  reducer, 
-  middleware
-})
+export default reducer;

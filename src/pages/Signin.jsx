@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { login } from '../redux/user/action';
 
 export default function Signin() {
   const [username, setUsername] = useState('');
@@ -8,33 +9,7 @@ export default function Signin() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    const formData = {
-      email: username,
-      password: password
-    };
-
-    fetch('http://localhost:3001/api/v1/user/login', {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.status === 200) {
-          // window.location.replace("./dashboard");
-          
-          console.log(data.status, data.body['token']);
-        } else {
-          console.log(data);
-        }
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    dispatch(login(username, password));
   };
 
   return (

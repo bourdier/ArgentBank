@@ -9,16 +9,15 @@ export default function Edit() {
     const rest = email.slice(1, email.indexOf("@"));
     return first + rest;
   }
-  
-  return (
-      <>
-        <h1>
-          Welcome back
-          <br />
-          {username ? username : splitEmail(email)}
-        </h1>
-        <button className="button edit">Edit Name</button>
-      </>
 
+  return (
+    <>
+      <h1>
+        Welcome back
+        <br />
+        {username ? username : splitEmail(email)}
+      </h1>
+      <button className="button edit">Edit Name</button>
+    </>
   );
 }

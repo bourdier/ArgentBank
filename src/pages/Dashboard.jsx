@@ -2,18 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Account from "../components/Account";
+import Edit from "../components/Edit";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
-  const username = useSelector((state) => state.usersData.username);
-  const email = useSelector((state) => state.usersData.email);
-
-  function splitEmail(email) {
-    const first = email[0].toUpperCase();
-    const rest = email.slice(1, email.indexOf("@"));
-    return first + rest;
-  }
 
   useEffect(() => {
     if (isLoggedIn === false) {
@@ -24,12 +17,7 @@ export default function Dashboard() {
   return (
     <main className="main bg-dark">
       <div className="header">
-        <h1>
-          Welcome back
-          <br />
-          {username ? username : splitEmail(email)}
-        </h1>
-        <button className="button edit">Edit Name</button>
+        <Edit />
       </div>
       <h2 className="sr-only">Accounts</h2>
       <Account />

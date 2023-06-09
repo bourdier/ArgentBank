@@ -28,6 +28,7 @@ export default function Signin() {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required="required"
             />
           </div>
           <div className="input__wrapper">
@@ -37,6 +38,7 @@ export default function Signin() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required="required"
             />
           </div>
           <div className="input__remember">

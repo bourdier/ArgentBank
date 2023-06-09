@@ -4,6 +4,7 @@
   color: $color-bg;
   font-weight: bold;
   display: block;
+  cursor: pointer;
   width: 100%;
   padding: 8px;
   font-size: 1.1rem;
@@ -18,6 +19,21 @@
   &.transaction {
     @media (min-width: map-get($breakpoints, laptop)) {
       width: 200px;
+    }
+  }
+  &.close {
+    background-color: $color-bg;
+    color: $color-bg-dark;
+    border: 0;
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    @media (min-width: map-get($breakpoints, laptop)) {
+      width: 35px;
+      height: 35px;
+      margin: .7rem;
     }
   }
 }

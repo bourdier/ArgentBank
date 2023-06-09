@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/auth/action';
+import { useNavigate } from 'react-router-dom'
 
 export default function Signin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(login(username, password));
+    navigate('/dashboard')
   };
 
   return (

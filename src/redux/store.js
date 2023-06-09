@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 const store = configureStore({
   reducer: {
-    user: userReducer,
+    usersData: userReducer,
   },
   middleware: [thunk],
 });

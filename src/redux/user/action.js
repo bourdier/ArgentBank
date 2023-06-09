@@ -18,7 +18,8 @@ export const login = (username, password) => async (dispatch) => {
 
     if (data.status === 200) {
       console.log(data.status, data.message);
-      dispatch(setUsername({ username: username }, { isLoggedIn: true }, { token: data.body['token'] }));
+      dispatch(setUsername({ username: username, isLoggedIn: true, token: data.body['token'] }));
+      window.location.href = './dashboard';
     }
   } catch (error) {
     console.log(error);

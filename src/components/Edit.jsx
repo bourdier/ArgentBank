@@ -1,11 +1,13 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import ReactModal from "react-modal";
 
 export default function Edit() {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+
   const username = useSelector((state) => state.usersData.username);
   const email = useSelector((state) => state.usersData.email);
+  const token = useSelector((state) => state.usersData.token);
 
   function splitEmail(email) {
     const first = email[0].toUpperCase();
@@ -15,6 +17,13 @@ export default function Edit() {
 
   function edit() {
     setIsOpen(true);
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const username = e.target[0].value;
+    // dispatch(setEdit(username, token));
+    setIsOpen(false);
   }
 
   return (
@@ -28,18 +37,27 @@ export default function Edit() {
         Edit Name
       </button>
 
-      <ReactModal 
-        isOpen={isOpen} 
-        portalClassName="modal">
+      {isOpen && (
+        <div className="modal">
           <button className="button close" onClick={() => setIsOpen(false)}>
-            X
+            x
           </button>
-          <h2>New username:</h2>
-          <input type="text" />
-          <button className="button edit" onClick={() => setIsOpen(false)}>
-            Save
-          </button>
-      </ReactModal>
+          <form className="modal__content" onSubmit={handleFormSubmit}>
+            <div className="input__wrapper">
+              <label htmlFor="username">New username</label>
+              <input
+                type="text"
+                id="username"
+                className="input__wrapper"
+                required="required"
+              />
+              <button className="button edit" type="submit">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
     </>
   );
 }

@@ -1,19 +1,25 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { login } from '../redux/auth/action';
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../redux/auth/action";
+import { useNavigate } from "react-router-dom";
 
 export default function Signin() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(login(username, password));
-    navigate('/dashboard')
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [isLoggedIn, navigate]);
 
   return (
     <main className="main bg-dark">
@@ -45,7 +51,9 @@ export default function Signin() {
             <input type="checkbox" id="remember__me" />
             <label htmlFor="remember__me">Remember me</label>
           </div>
-          <button className="button" type="submit">Sign In</button>
+          <button className="button" type="submit">
+            Sign In
+          </button>
         </form>
       </section>
     </main>

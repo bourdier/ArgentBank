@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import ReactModal from "react-modal";
 
 export default function Edit() {
+  const [isOpen, setIsOpen] = useState(false);
   const username = useSelector((state) => state.usersData.username);
   const email = useSelector((state) => state.usersData.email);
-  const navigate = useNavigate();
 
   function splitEmail(email) {
     const first = email[0].toUpperCase();
@@ -12,8 +13,8 @@ export default function Edit() {
     return first + rest;
   }
 
-  function settings() {
-    navigate('/settings');
+  function edit() {
+    setIsOpen(true);
   }
 
   return (
@@ -23,9 +24,22 @@ export default function Edit() {
         <br />
         {username ? username : splitEmail(email)}
       </h1>
-      <button className="button edit" onClick={() => settings()}>
+      <button className="button edit" onClick={() => edit()}>
         Edit Name
       </button>
+
+      <ReactModal 
+        isOpen={isOpen} 
+        portalClassName="modal">
+          <button className="button close" onClick={() => setIsOpen(false)}>
+            X
+          </button>
+          <h2>New username:</h2>
+          <input type="text" />
+          <button className="button edit" onClick={() => setIsOpen(false)}>
+            Save
+          </button>
+      </ReactModal>
     </>
   );
 }

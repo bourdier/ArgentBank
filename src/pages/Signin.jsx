@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../redux/user/action';
+import { login } from '../redux/auth/action';
 
 export default function Signin() {
   const [username, setUsername] = useState('');

@@ -16,15 +16,13 @@ export const login = (username, password) => async (dispatch) => {
 
     const data = await response.json();
 
-    if (data.status === 200) {
-      dispatch(
-        setUsername({
-          username: username,
-          isLoggedIn: true,
-          token: data.body["token"],
-        })
-      );
-    }
+    dispatch(
+      setUsername({
+        username: username,
+        isLoggedIn: true,
+        token: data.body["token"],
+      })
+    );
   } catch (error) {
     console.log(error);
   }

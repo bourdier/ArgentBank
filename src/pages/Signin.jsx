@@ -4,7 +4,7 @@ import { login } from "../redux/auth/action";
 import { useNavigate } from "react-router-dom";
 
 export default function Signin() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ export default function Signin() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(username, password));
+    dispatch(login(email, password));
   };
 
   useEffect(() => {
@@ -32,8 +32,8 @@ export default function Signin() {
             <input
               type="text"
               id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required="required"
             />
           </div>

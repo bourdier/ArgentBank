@@ -119,7 +119,7 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/transactions:
+  /transactions:
     post: 
       security:
         - Bearer: []
@@ -246,6 +246,8 @@ definitions:
   Transaction:
     type: object
     properties:
+      userId: 
+        type: number
       id: 
         type: string
       date: 

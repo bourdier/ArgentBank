@@ -28,10 +28,10 @@ export default function Signin() {
         <h1>Sign In</h1>
         <form onSubmit={handleFormSubmit}>
           <div className="input__wrapper">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="email">Email</label>
             <input
               type="text"
-              id="username"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required="required"

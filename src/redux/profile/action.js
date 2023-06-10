@@ -7,11 +7,9 @@ export const setProfileUsername = (token, username) => async (dispatch) => {
       headers: {
         accept: "application/json",
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
+        "Authorization": token,
+        "userName": username,
       },
-      body: JSON.stringify({
-        username: username,
-      }),
     });
 
     const data = await response.json();

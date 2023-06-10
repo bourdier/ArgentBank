@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { setProfileUsername } from "../redux/profile/action";
+import { useState } from "react";
 
 export default function Edit() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
-  const username = useSelector((state) => state.usersData.username);
+  const username = useSelector((state) => state.profileData.username);
   const email = useSelector((state) => state.usersData.email);
   const token = useSelector((state) => state.usersData.token);
 
@@ -26,7 +27,7 @@ export default function Edit() {
   function handleFormSubmit(e) {
     e.preventDefault();
     const username = e.target[0].value;
-    // dispatch(setEdit(username, token));
+    dispatch(setProfileUsername(username, token));
     setIsOpen(false);
   }
 

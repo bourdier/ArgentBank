@@ -9,6 +9,10 @@ export default function Edit() {
   const email = useSelector((state) => state.usersData.email);
   const token = useSelector((state) => state.usersData.token);
 
+  if (!token) {
+    return
+  }
+
   function splitEmail(email) {
     const first = email[0].toUpperCase();
     const rest = email.slice(1, email.indexOf("@"));

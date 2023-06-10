@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setProfileUsername, getProfileUsername } from "../redux/profile/action";
+import { setProfileUsername } from "../redux/profile/action";
 import { useState } from "react";
 
 export default function Edit() {

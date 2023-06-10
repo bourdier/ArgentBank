@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { userSlice } from './auth/reducer';
+import { profileSlice } from './profile/reducer';
 import { persistStore, persistReducer, purgeStoredState} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
@@ -11,6 +12,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   usersData: userSlice.reducer,
+  profileData: profileSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

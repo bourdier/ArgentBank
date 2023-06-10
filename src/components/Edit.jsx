@@ -52,7 +52,7 @@ export default function Edit() {
               <input
                 type="text"
                 id="firstname"
-                className="input__wrapper"
+                className="input__wrapper disabled"
                 readOnly="readonly"
                 value={firstname}
               />
@@ -60,7 +60,7 @@ export default function Edit() {
               <input
                 type="text"
                 id="lastname"
-                className="input__wrapper"
+                className="input__wrapper disabled"
                 readOnly="readonly"
                 value={lastname}
               />

@@ -36,42 +36,54 @@ export default function Edit() {
       <button className="button edit" onClick={() => edit()}>
         Edit Name
       </button>
-
       {isOpen && (
         <div className="modal">
-          <form className="modal__content" onSubmit={handleFormSubmit}>
-            <div className="input__wrapper">
-              <label htmlFor="username">User name</label>
-              <input
-                type="text"
-                id="username"
-                className="input__wrapper"
-                required="required"
-              />
-              <label htmlFor="firstname">First name</label>
-              <input
-                type="text"
-                id="firstname"
-                className="input__wrapper disabled"
-                readOnly="readonly"
-                value={firstname}
-              />
-              <label htmlFor="lastname">Last name</label>
-              <input
-                type="text"
-                id="lastname"
-                className="input__wrapper disabled"
-                readOnly="readonly"
-                value={lastname}
-              />
-              <button className="button edit" type="submit">
-                Save
-              </button>
-              <button className="button edit" onClick={() => setIsOpen(false)}>
-                Cancel
-              </button>
-            </div>
-          </form>
+          <div className="modal__overlay">
+            <form className="form form--edit" onSubmit={handleFormSubmit}>
+              <h2>Edit profile</h2>
+              <div className="input__wrapper">
+                <label htmlFor="username">User name</label>
+                <input
+                  type="text"
+                  id="username"
+                  className="input__wrapper"
+                  required="required"
+                />
+              </div>
+              <div className="input__wrapper">
+                <label htmlFor="firstname">First name</label>
+
+                <input
+                  type="text"
+                  id="firstname"
+                  className="input__wrapper disabled"
+                  readOnly="readonly"
+                  value={firstname}
+                />
+              </div>
+              <div className="input__wrapper">
+                <label htmlFor="lastname">Last name</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  className="input__wrapper disabled"
+                  readOnly="readonly"
+                  value={lastname}
+                />
+              </div>
+              <div className="form--edit__button">
+                <button className="button edit" type="submit">
+                  Save
+                </button>
+                <button
+                  className="button edit"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
     </>

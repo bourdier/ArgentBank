@@ -1,4 +1,4 @@
-import { setUsername } from "./reducer";
+import { setAuth } from "./reducer";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
     const data = await response.json();
 
     dispatch(
-      setUsername({
+      setAuth({
         email: email,
         isLoggedIn: true,
         token: data.body["token"],

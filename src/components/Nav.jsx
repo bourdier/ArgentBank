@@ -27,7 +27,7 @@ export default function Navbar() {
       <div>
         {isLoggedIn ? (
           <>
-            <Link to="/user" className="main-nav__item">
+            <Link to="/dashboard" className="main-nav__item">
               <i className="fa fa-user-circle main-nav__icon"></i>
               {username}
             </Link>

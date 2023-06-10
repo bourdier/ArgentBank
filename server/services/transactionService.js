@@ -4,6 +4,7 @@ module.exports.postTransaction = async serviceData => {
   try {
     const newTransaction = new Transaction({
       userId: serviceData.body.userId,
+      id: serviceData.body.id,
       date: serviceData.body.date,
       description: serviceData.body.description,
       amount: serviceData.body.amount,
@@ -30,6 +31,8 @@ module.exports.updateTransaction = async serviceData => {
       throw new Error('Transaction not found!')
     }
 
+    transaction.userId = serviceData.body.userId
+    transaction.id = serviceData.body.id
     transaction.date = serviceData.body.date
     transaction.description = serviceData.body.description
     transaction.amount = serviceData.body.amount

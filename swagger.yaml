@@ -127,8 +127,15 @@ paths:
         - User Module
       summary: User Transactions API
       description: API for fetching a user transactions
-      #produces:
-       # - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Update user transactions attributes
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
+      produces:
+       - application/json
       responses:
         '200':
           description: User transactions retrieved successully

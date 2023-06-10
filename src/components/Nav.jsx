@@ -6,7 +6,7 @@ import Logo from "../assets/images/argentBankLogo.png";
 export default function Navbar() {
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
-  const username = useSelector((state) => state.usersData.username);
+  const username = useSelector((state) => state.profileData.username);
   const email = useSelector((state) => state.usersData.email);
 
   function splitEmail(email) {

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { getProfileUsername } from "../redux/profile/action";
+import { getProfileData } from "../redux/profile/action";
 import Account from "../components/Account";
 import Edit from "../components/Edit";
 
@@ -12,7 +12,7 @@ export default function Dashboard() {
   const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
   const token = useSelector((state) => state.usersData.token);
 
-  dispatch(getProfileUsername(token));
+  dispatch(getProfileData(token));
 
   useEffect(() => {
     if (isLoggedIn === false) {

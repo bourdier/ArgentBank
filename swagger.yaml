@@ -239,6 +239,8 @@ definitions:
   Transaction:
     type: object
     properties:
+      id: 
+        type: string
       date: 
         type: string
       description:

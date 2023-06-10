@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { userSlice } from './auth/reducer';
 import { profileSlice } from './profile/reducer';
-import { persistStore, persistReducer, purgeStoredState} from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 

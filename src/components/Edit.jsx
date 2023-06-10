@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setProfileUsername } from "../redux/profile/action";
+import { setProfileUsername, getProfileUsername } from "../redux/profile/action";
 import { useState } from "react";
 
 export default function Edit() {
@@ -9,6 +9,8 @@ export default function Edit() {
   const username = useSelector((state) => state.profileData.username);
   const email = useSelector((state) => state.usersData.email);
   const token = useSelector((state) => state.usersData.token);
+
+  dispatch(getProfileUsername(token));
 
   if (!token) {
     return

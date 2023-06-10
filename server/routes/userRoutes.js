@@ -19,4 +19,10 @@ router.put(
   userController.updateUserProfile
 )
 
+router.get(
+  '/profile',
+  tokenValidation.validateToken,
+  userController.getUserProfile
+)
+
 module.exports = router

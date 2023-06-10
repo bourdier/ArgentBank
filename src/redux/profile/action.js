@@ -29,15 +29,18 @@ export const getProfileUsername = (token) => async (dispatch) => {
       headers: {
         accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: token,
+        Authorization: 'Bearer' + token,
       },
     });
 
     const data = await response.json();
+    console.log(data);
 
     dispatch(
       setProfile({
-        username: data.userName,
+        username: data.body.userName,
+        firstname: data.body.firstName,
+        lastname: data.body.lastName,
       })
     );
   } catch (error) {

@@ -9,8 +9,6 @@ export default function Edit() {
   const username = useSelector((state) => state.profileData.username);
   const token = useSelector((state) => state.usersData.token);
 
-  dispatch(getProfileUsername(token));
-
   if (!token) {
     return
   }

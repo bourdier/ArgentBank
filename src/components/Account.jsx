@@ -1,9 +1,11 @@
-export default function Account() {
+import { PropTypes } from "prop-types";
+
+export default function Account(props) {
   return (
     <section className="account">
       <div className="account__content__wrapper">
-        <h3 className="account__title">Argent Bank Checking (x8349)</h3>
-        <p className="account__amount">$2,082.79</p>
+        <h3 className="account__title">{props.title}</h3>
+        <p className="account__amount">{props.amount}</p>
         <p className="account__amount__description">Available Balance</p>
       </div>
       <div className="account__content__wrapper cta">
@@ -12,3 +14,8 @@ export default function Account() {
     </section>
   );
 }
+
+Account.propTypes = {
+  title: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+};

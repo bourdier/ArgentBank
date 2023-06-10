@@ -7,19 +7,12 @@ export default function Edit() {
   const dispatch = useDispatch();
 
   const username = useSelector((state) => state.profileData.username);
-  const email = useSelector((state) => state.usersData.email);
   const token = useSelector((state) => state.usersData.token);
 
   dispatch(getProfileUsername(token));
 
   if (!token) {
     return
-  }
-
-  function splitEmail(email) {
-    const first = email[0].toUpperCase();
-    const rest = email.slice(1, email.indexOf("@"));
-    return first + rest;
   }
 
   function edit() {
@@ -38,7 +31,7 @@ export default function Edit() {
       <h1>
         Welcome back
         <br />
-        {username ? username : splitEmail(email)}
+        {username}
       </h1>
       <button className="button edit" onClick={() => edit()}>
         Edit Name

@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <>
       <h1>
-        Welcome back
+        Welcome back,
         <br />
         {username}
       </h1>

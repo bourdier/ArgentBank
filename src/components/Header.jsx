@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProfileUsername } from "../redux/profile/action";
 import { useState } from "react";
 
-export default function Edit() {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 

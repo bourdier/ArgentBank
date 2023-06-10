@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getProfileData } from "../redux/profile/action";
 import Account from "../components/Account";
-import Edit from "../components/Edit";
+import Header from "../components/Header";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function Dashboard() {
   return (
     <main className="main bg-dark">
       <div className="header">
-        <Edit />
+        <Header />
       </div>
       <h2 className="sr-only">Accounts</h2>
       <Account 

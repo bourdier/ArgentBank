@@ -8,17 +8,16 @@ import Header from "../components/Header";
 export default function Dashboard() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
+  
   const token = useSelector((state) => state.usersData.token);
 
   dispatch(getProfileData(token));
 
   useEffect(() => {
-    if (isLoggedIn === false) {
+    if (token === '') {
       navigate("/login");
     }
-  }, [isLoggedIn, navigate]);
+  }, [token, navigate]);
 
   return (
     <main className="main bg-dark">

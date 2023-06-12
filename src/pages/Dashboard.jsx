@@ -14,7 +14,7 @@ export default function Dashboard() {
   dispatch(getProfileData(token));
 
   useEffect(() => {
-    if (token === '') {
+    if (!token) {
       navigate("/login");
     }
   }, [token, navigate]);

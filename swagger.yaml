@@ -130,7 +130,7 @@ paths:
       parameters:
         - in: body
           name: body
-          description: Update user transactions attributes
+          description: Add user transactions attributes
           required: true
           schema:
             $ref: '#/definitions/Transaction'
@@ -180,7 +180,7 @@ paths:
       parameters:
         - in: body
           name: body
-          description: Update user transactions attributes
+          description: User transactions retrieved successully
           required: true
           schema:
             $ref: '#/definitions/Transaction'

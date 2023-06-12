@@ -9,7 +9,7 @@ export default function Navbar() {
   const username = useSelector((state) => state.profileData.username);
 
   const handleLogout = () => {
-    navigate("/login");
+    navigate("/");
     navigate(0);
     clearPersistedState();
   };

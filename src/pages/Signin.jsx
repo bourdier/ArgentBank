@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/auth/action";
 import { useNavigate } from "react-router-dom";
+import { setAuth } from "../redux/auth/reducer";
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -19,6 +20,14 @@ export default function Signin() {
   useEffect(() => {
     if (token) {
       navigate("/dashboard");
+    } else if (!token && incorrect) {
+      // If the user is not logged in and the incorrect state is true, 
+      // set incorrect to false to prevent the error message from showing up again.
+      dispatch(
+        setAuth({
+          incorrect: false,
+        })
+      )
     }
   }, [token, navigate]);
 

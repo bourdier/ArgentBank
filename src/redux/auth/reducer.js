@@ -4,6 +4,7 @@ export const userInitialState = {
   email: null,
   isLoggedIn: false,
   token: '',
+  incorrect: false,
 };
 
 export const userSlice = createSlice({
@@ -11,10 +12,11 @@ export const userSlice = createSlice({
   initialState: userInitialState,
   reducers: {
     setAuth: (state, action) => {
-      const { email, isLoggedIn, token } = action.payload;
+      const { email, isLoggedIn, token, incorrect } = action.payload;
       state.email = email;
       state.isLoggedIn = isLoggedIn;
       state.token = token;
+      state.incorrect = incorrect;
     },
   },
 });

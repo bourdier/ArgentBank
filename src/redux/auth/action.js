@@ -21,9 +21,15 @@ export const login = (email, password) => async (dispatch) => {
         email: email,
         isLoggedIn: true,
         token: data.body["token"],
+        incorrect: false,
       })
     );
   } catch (error) {
     console.log(error);
+    dispatch(
+      setAuth({
+        incorrect: true,
+      })
+    );
   }
 };

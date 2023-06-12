@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 export default function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [incorrect, setIncorrect] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.usersData.token);
+  const incorrect = useSelector((state) => state.usersData.incorrect);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();

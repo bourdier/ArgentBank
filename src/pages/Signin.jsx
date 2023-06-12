@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [incorrect, setIncorrect] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.usersData.token);
@@ -26,6 +27,14 @@ export default function Signin() {
       <section className="form">
         <i className="fa fa-user-circle form__icon"></i>
         <h1>Sign In</h1>
+        {incorrect && ( 
+          <div className="error">
+            <i className="fa fa-exclamation-circle error__icon"></i>
+            <p>
+              Incorrect email address or password. Please try again.
+            </p>
+          </div>
+        )}
         <form onSubmit={handleFormSubmit}>
           <div className="input__wrapper">
             <label htmlFor="email">Email</label>

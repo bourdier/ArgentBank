@@ -1,0 +1,16 @@
+.error {
+    color: #ff0000;
+    font-size: 0.8rem;
+    margin: 1rem;
+    padding: 1rem; 
+    text-align: center;
+    background-color: #fff0f0; 
+    border: 1px solid #ff0000;
+    &__icon {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    p {
+      margin: 0;
+    }
+}

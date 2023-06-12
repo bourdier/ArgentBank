@@ -8,7 +8,7 @@ export default function Signin() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoggedIn = useSelector((state) => state.usersData.isLoggedIn);
+  const token = useSelector((state) => state.usersData.token);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +16,10 @@ export default function Signin() {
   };
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (token) {
       navigate("/dashboard");
     }
-  }, [isLoggedIn, navigate]);
+  }, [token, navigate]);
 
   return (
     <main className="main bg-dark">

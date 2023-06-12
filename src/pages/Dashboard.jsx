@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getProfileData } from "../redux/profile/action";
+import { setError } from "../redux/error/reducer";
 import Account from "../components/Account";
 import Header from "../components/Header";
 
@@ -16,6 +17,11 @@ export default function Dashboard() {
   useEffect(() => {
     if (!token) {
       navigate("/login");
+      dispatch(
+        setError({
+          notAllowed: true,
+        })
+      );
     }
   }, [token, navigate]);
 

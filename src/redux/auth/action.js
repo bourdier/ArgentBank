@@ -1,4 +1,5 @@
 import { setAuth } from "./reducer";
+import { setError } from "../error/reducer";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -21,13 +22,12 @@ export const login = (email, password) => async (dispatch) => {
         email: email,
         isLoggedIn: true,
         token: data.body["token"],
-        incorrect: false,
       })
     );
   } catch (error) {
     console.log(error);
     dispatch(
-      setAuth({
+      setError({
         incorrect: true,
       })
     );

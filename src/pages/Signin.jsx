@@ -9,7 +9,8 @@ export default function Signin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.usersData.token);
-  const incorrect = useSelector((state) => state.usersData.incorrect);
+  const incorrect = useSelector((state) => state.errors.incorrect);
+  const notAllowed = useSelector((state) => state.errors.notAllowed);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -27,12 +28,16 @@ export default function Signin() {
       <section className="form">
         <i className="fa fa-user-circle form__icon"></i>
         <h1>Sign In</h1>
-        {incorrect && ( 
+        {incorrect && (
           <div className="error">
             <i className="fa fa-exclamation-circle error__icon"></i>
-            <p>
-              Incorrect email address or password. Please try again.
-            </p>
+            <p>Incorrect email address or password. Please try again.</p>
+          </div>
+        )}
+        {notAllowed && (
+          <div className="error">
+            <i className="fa fa-exclamation-circle error__icon"></i>
+            <p>You must be logged in to view the page you requested.</p>
           </div>
         )}
         <form onSubmit={handleFormSubmit}>

@@ -9,15 +9,26 @@
     border: 10px solid $color-primary;
     border-radius: 50%;
     padding: 1rem;
+    @media (max-width: map-get($breakpoints, mobile)) {
+      padding: 0.25rem;
+    }
   }
   &__item {
     flex: 1;
     padding: 2.5rem;
+    @media (max-width: map-get($breakpoints, mobile)) {
+      padding: 1rem;
+      width: 75%;
+      margin: 0 auto;
+    }
     &__title {
       color: $color-feature-text;
       font-size: 1.25rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
+      @media (max-width: map-get($breakpoints, mobile)) {
+        font-size: 1rem;
+      }
     }
   }
 }

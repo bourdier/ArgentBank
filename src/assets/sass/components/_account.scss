@@ -14,6 +14,9 @@
   @media (min-width: map-get($breakpoints, laptop)) {
     flex-direction: row;
   }
+  @media (max-width: map-get($breakpoints, mobile)) {
+    flex-direction: column;
+  }
   &__amount {
     margin: 0;
     font-size: 2.5rem;

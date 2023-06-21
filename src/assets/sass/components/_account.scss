@@ -29,9 +29,8 @@
     width: 100%;
     flex: 1;
     &.cta {
-      @media (max-width: map-get($breakpoints, laptop)) {
-        flex: 0;
-      }
+      display: flex;
+      justify-content: end;
     }
   }
   &__title {

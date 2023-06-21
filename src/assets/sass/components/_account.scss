@@ -11,10 +11,7 @@
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
-  @media (min-width: map-get($breakpoints, laptop)) {
-    flex-direction: row;
-  }
-  @media (max-width: map-get($breakpoints, mobile)) {
+  @media (max-width: map-get($breakpoints, tablet)) {
     flex-direction: column;
   }
   &__amount {
@@ -24,12 +21,15 @@
     &__description {
       margin: 0;
     }
+    @media (max-width: map-get($breakpoints, mobile)) {
+      font-size: 1.8rem;
+    }
   }
   &__content__wrapper {
     width: 100%;
     flex: 1;
     &.cta {
-      @media (min-width: map-get($breakpoints, laptop)) {
+      @media (max-width: map-get($breakpoints, laptop)) {
         flex: 0;
       }
     }
@@ -39,5 +39,8 @@
     padding: 0;
     font-size: 1rem;
     font-weight: normal;
+    @media (max-width: map-get($breakpoints, mobile)) {
+      font-size: .8rem;
+    }
   }
 }
